@@ -14,7 +14,7 @@
 
     if (array_key_exists("submit", $_POST)) {
         
-        $link = mysqli_connect("localhost", "root", "", "spaceventure1");       
+        $link = mysqli_connect("localhost", "root", "", "noteswebapp");       
         if (mysqli_connect_error()) {      
             die ("Database Connection Error");         
         }
