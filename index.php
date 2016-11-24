@@ -108,11 +108,17 @@
 
     <!-- Custom styles for this template -->
     <link href="NotesCss.css" rel="stylesheet">
+      
+    <!-- Delius Unicase Font -->
+    <link href="https://fonts.googleapis.com/css?family=Delius+Unicase" rel="stylesheet">
+      
+    <!-- PT Sans Font -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
   </head>
 
   <body>
 
-    <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
+    <!--<nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
       <a class="navbar-brand" href="#">Project name</a>
       <ul class="nav navbar-nav">
         <li class="nav-item active">
@@ -125,7 +131,7 @@
           <a class="nav-link" href="#">Contact</a>
         </li>
       </ul>
-    </nav>
+    </nav>-->
 
     <div class="container main">
 

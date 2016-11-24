@@ -1,10 +1,20 @@
 body {
   padding-top: 50px;
+  background: url(images/lights.jpg);
+  background-size: cover;
 }
 .starter-template {
   padding: 40px 15px;
   text-align: center;
 }
 .main{
-    width: 50%;
+    width: 800px;
+}
+.starter-template h1{
+    color: white;
+    font-family: 'Delius Unicase', cursive;
+}
+.starter-template p{
+    color: white;
+    font-family: 'PT Sans', sans-serif;
 }
