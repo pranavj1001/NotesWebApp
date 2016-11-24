@@ -127,7 +127,7 @@
       </ul>
     </nav>
 
-    <div class="container">
+    <div class="container main">
 
       <div class="starter-template">
           
@@ -138,19 +138,39 @@
         <div id="error"><?php echo $error; ?></div>
           
         <form method="post">
-            <input type="email" name="email" placeholder="Your Email">
-            <input type="password" name="password" placeholder="Password">
-            <input type="checkbox" name="stayLoggedIn" value=1>
-            <input type="hidden" name="signUp" value="1">
-            <input type="submit" name="submit" value="Sign Up!">
+            <fieldset class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Your Email">
+            </fieldset>
+            <fieldset class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </fieldset>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="stayLoggedIn" value=1>Stay Logged In
+                </label>
+            </div>
+            <fieldset class="form-group">
+                <input class="form-control" type="hidden" name="signUp" value="1">
+                <input class="btn btn-success" type="submit" name="submit" value="Sign Up!">
+            </fieldset>
         </form>
 
         <form method="post">
-            <input type="email" name="email" placeholder="Your Email">
-            <input type="password" name="password" placeholder="Password">
-            <input type="checkbox" name="stayLoggedIn" value=1>
-            <input type="hidden" name="signUp" value="0">
-            <input type="submit" name="submit" value="Log In!">
+            <fieldset class="form-group">
+                <input class="form-control" type="email" name="email" placeholder="Your Email">
+            </fieldset>
+            <fieldset class="form-group">
+                <input class="form-control" type="password" name="password" placeholder="Password">
+            </fieldset>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="stayLoggedIn" value=1>Stay Logged In
+                </label>
+            </div>
+            <fieldset class="form-group">
+                <input class="form-control" type="hidden" name="signUp" value="0">
+                <input class="btn btn-success" type="submit" name="submit" value="Log In!">
+            </fieldset>
         </form>
           
       </div>
