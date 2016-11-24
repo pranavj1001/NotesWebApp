@@ -1,11 +1,11 @@
 body {
-  padding-top: 50px;
-  background: url(images/lights.jpg);
-  background-size: cover;
+    padding-top: 50px;
+    background: url(images/lights.jpg);
+    background-size: cover;
 }
 .starter-template {
-  padding: 40px 15px;
-  text-align: center;
+    padding: 40px 15px;
+    text-align: center;
 }
 .main{
     width: 800px;

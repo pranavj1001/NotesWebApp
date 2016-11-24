@@ -136,10 +136,11 @@
     <div class="container main">
 
       <div class="starter-template">
-          
-        <h1>Notes</h1>
-          
-        <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+        
+        <div class="heading">
+            <h1>Notes</h1>          
+            <p class="lead">Use this place to store all your notes, thoughts, ideas, schedules and much more.....<br> Come, write your next great story!</p>
+        </div>
           
         <div id="error"><?php echo $error; ?></div>
           
