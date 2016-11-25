@@ -144,7 +144,7 @@
           
         <div id="error"><?php echo $error; ?></div>
           
-        <form method="post">
+        <form method="post" id="signUpForm">
             <fieldset class="form-group">
                 <input class="form-control" type="email" name="email" placeholder="Your Email">
             </fieldset>
@@ -161,8 +161,13 @@
                 <input class="btn btn-success" type="submit" name="submit" value="Sign Up!">
             </fieldset>
         </form>
+          
+        <div id="show1">  
+            <p>OR</p>
+            <p><button id="showLogIn" class="btn btn-success">Log In</button></p>
+        </div>
 
-        <form method="post">
+        <form method="post" id="logInForm">
             <fieldset class="form-group">
                 <input class="form-control" type="email" name="email" placeholder="Your Email">
             </fieldset>
@@ -179,6 +184,11 @@
                 <input class="btn btn-success" type="submit" name="submit" value="Log In!">
             </fieldset>
         </form>
+        
+        <div id="show2">  
+            <p>OR</p>
+            <p><button id="showSignUp" class="btn btn-success">Sign UP!</button></p>
+        </div>
           
       </div>
     </div><!-- /.container -->
@@ -193,5 +203,33 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+      
+    <script type="text/javascript">
+        
+        $('#signUpForm').hide();
+        $('#show1').hide();
+        
+        setInterval(function(){logInOrSignUp();}, 200);
+        
+        function logInOrSignUp(){
+            
+            $('#showSignUp').click(function(){
+                $('#signUpForm').show();
+                $('#show1').show();
+                $('#logInForm').hide();
+                $('#show2').hide();
+            });
+            
+            $('#showLogIn').click(function(){
+                $('#signUpForm').hide();
+                $('#show1').hide();
+                $('#logInForm').show();
+                $('#show2').show();
+            });
+            
+        }
+        
+    </script>
+      
   </body>
 </html>
