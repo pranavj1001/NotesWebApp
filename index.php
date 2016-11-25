@@ -209,6 +209,7 @@
     </div><!-- /.container -->
       
     <footer>
+        <p>&copy;Pranav Jain 9th November,2016</p>
     </footer>
 
 
