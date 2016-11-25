@@ -1,7 +1,8 @@
 <?php
 
     session_start();
-    $error = "";    
+    $error = "";
+    $noName = false;
 
     if (array_key_exists("logout", $_GET)) { 
         unset($_SESSION);
@@ -19,13 +20,12 @@
             die ("Database Connection Error");         
         }
         
-        
         if (!$_POST['email']) {       
             $error .= "An email address is required<br>";          
         }        
         if (!$_POST['password']) {        
             $error .= "A password is required<br>";          
-        } 
+        }
         
         if ($error != "") {     
             $error = "<p>There were error(s) in your form:</p>".$error;
@@ -40,10 +40,19 @@
                 if (mysqli_num_rows($result) > 0) {
                     $error = "That email address is taken.";
                 } else {
-
-                    $query = "INSERT INTO `users` (`firstName`, `lastName`, `email`, `password`) VALUES ('".mysqli_real_escape_string($link, $_POST['firstName'])."', '".mysqli_real_escape_string($link, $_POST['lastName'])."', '".mysqli_real_escape_string($link, $_POST['email'])."', '".mysqli_real_escape_string($link, $_POST['password'])."')";
-
-                    if (!mysqli_query($link, $query)) {
+                    
+                    if (!$_POST['firstName'] || !$_POST['lastName']) {
+                        $error .= "We require your Name";
+                        $noName = true;
+                    } else {
+                        $query = "INSERT INTO `users` (`firstName`, `lastName`, `email`, `password`) VALUES ('".mysqli_real_escape_string($link, $_POST['firstName'])."', '".mysqli_real_escape_string($link, $_POST['lastName'])."', '".mysqli_real_escape_string($link, $_POST['email'])."', '".mysqli_real_escape_string($link, $_POST['password'])."')";
+                        
+                    }
+                    
+                    if($noName){
+                        
+                    }
+                    else if (!mysqli_query($link, $query)) {
                         $error = "<p>Could not sign you up - please try again later.</p>";
                     } else {
 
