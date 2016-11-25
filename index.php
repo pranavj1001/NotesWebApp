@@ -41,7 +41,7 @@
                     $error = "That email address is taken.";
                 } else {
 
-                    $query = "INSERT INTO `users` (`email`, `password`) VALUES ('".mysqli_real_escape_string($link, $_POST['email'])."', '".mysqli_real_escape_string($link, $_POST['password'])."')";
+                    $query = "INSERT INTO `users` (`firstName`, `lastName`, `email`, `password`) VALUES ('".mysqli_real_escape_string($link, $_POST['firstName'])."', '".mysqli_real_escape_string($link, $_POST['lastName'])."', '".mysqli_real_escape_string($link, $_POST['email'])."', '".mysqli_real_escape_string($link, $_POST['password'])."')";
 
                     if (!mysqli_query($link, $query)) {
                         $error = "<p>Could not sign you up - please try again later.</p>";
@@ -145,6 +145,12 @@
         <div id="error"><?php echo $error; ?></div>
           
         <form method="post" id="signUpForm">
+            <fieldset class="form-group">
+                <input class="form-control" type="text" name="firstName" placeholder="Your First Name">
+            </fieldset>
+            <fieldset class="form-group">
+                <input class="form-control" type="text" name="lastName" placeholder="Your Last Name">
+            </fieldset>
             <fieldset class="form-group">
                 <input class="form-control" type="email" name="email" placeholder="Your Email">
             </fieldset>
