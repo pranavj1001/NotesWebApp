@@ -207,6 +207,9 @@
           
       </div>
     </div><!-- /.container -->
+      
+    <footer>
+    </footer>
 
 
     <!-- Bootstrap core JavaScript

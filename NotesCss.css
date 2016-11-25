@@ -18,3 +18,8 @@ body {
     color: white;
     font-family: 'PT Sans', sans-serif;
 }
+footer{
+    text-align: center;
+    margin-top: 150px;
+    color: white;
+}
