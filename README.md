@@ -10,4 +10,4 @@ The App authenticates the users, therefore User A cannot alter the data of User 
 
 I've used Bootstrap for fast front-end development and PHP for back-end work.
 
-Note: The Web App is still WIP(Work in Progress).
+I've used AJAX to send data to the server.
