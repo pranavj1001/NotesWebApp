@@ -151,7 +151,9 @@
             <p class="lead">Use this place to store all your notes, thoughts, ideas, schedules and much more.....<br> Come, write your next great story!</p>
         </div>
           
-        <div id="error"><?php echo $error; ?></div>
+        <div id="error"><?php if($error != ""){
+            echo "<div class='alert alert-danger' role='alert'>$error</div>";
+        } ?></div>
           
         <form method="post" id="signUpForm">
             <fieldset class="form-group">
