@@ -77,6 +77,22 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>    
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+      
+    <script type="text/javascript">
+      
+        $('#notes').bind('input propertychange', function() {
+            $.ajax({
+              method: "POST",
+              url: "updateDB.php",
+              data: { content: $("#notes").val()}
+            })
+              .done(function( msg ) {
+                alert( "Data Saved: " + msg );
+            });
+        });
+      
+    </script>
+      
   </body>
 </html>
