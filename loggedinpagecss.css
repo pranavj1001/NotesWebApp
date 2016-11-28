@@ -1,22 +1,17 @@
 body {
-    padding-top: 20px;
-}
-.bg{
-    background: url(images/lights.jpg);
+    padding-top: 50px;
+    background: url(images/lights2.jpg);
     background-size: cover;
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
-    width: 100%;
-    height: 1000px;
-    padding: 0;
-    top: 0;
-    left: 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
 }
 footer{
     text-align: center;
+    margin: 20px;
+}
+.notesArea{
+    text-align: center;
+    height: 750px;
+}
+#notes{
+    width: 100%;
+    height: 100%;
 }
