@@ -86,9 +86,6 @@
               method: "POST",
               url: "updateDB.php",
               data: { content: $("#notes").val()}
-            })
-              .done(function( msg ) {
-                alert( "Data Saved: " + msg );
             });
         });
       
