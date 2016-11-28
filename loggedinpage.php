@@ -1,11 +1,28 @@
 <?php
 
     session_start();
-
+    
+    $notes = "";
+    
     if (array_key_exists("id", $_COOKIE)) {        
         $_SESSION['id'] = $_COOKIE['id'];       
     }
-
+    
+    if (array_key_exists("id", $_SESSION) && $_SESSION['id']) {
+        
+        $link = mysqli_connect("localhost", "root", "", "noteswebapp");       
+        if (mysqli_connect_error()) {      
+            die ("Database Connection Error");         
+        }
+                    
+        $query = "SELECT notes FROM `users` WHERE id = ".mysqli_real_escape_string($link, $_SESSION['id'])." LIMIT 1";
+        $row = mysqli_fetch_array(mysqli_query($link, $query));
+                    
+        $notes = $row['notes'];
+                    
+        } else {       
+            header("Location: index.php");      
+        }
 ?>
 
 <!DOCTYPE html>
@@ -50,8 +67,8 @@
         </li>-->
         <li id="logout" class="nav-item">
           <?php
-                if (array_key_exists("id", $_SESSION)) {       
-                    echo "<a class='nav-link' href='index.php?logout=1'>Log out</a>";       
+                if (array_key_exists("id", $_SESSION) && $_SESSION['id']) {       
+                    echo "<a class='nav-link' href='index.php?logout=1'>Log out</a>";
                 } else {       
                     header("Location: index.php");      
                 }
@@ -61,7 +78,7 @@
     </nav>
       
     <div class="container notesArea">
-          <textarea id="notes" class="form-control"></textarea>
+          <textarea id="notes" class="form-control"><?php echo $notes; ?></textarea>
     </div>
       
     <footer>
